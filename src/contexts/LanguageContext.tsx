@@ -20,6 +20,12 @@ const translations = {
     "home.description":
       "Discover our wide range of electronics boards and components for your next project.",
     "home.featured": "Featured Products",
+    "home.popular": "Most Popular Products",
+    "home.discounted": "Special Offers",
+    "home.newArrivals": "New Arrivals",
+    "home.ctaTitle": "Ready to Start Your Project?",
+    "home.ctaDescription":
+      "Explore our wide range of electronic components and find everything you need.",
     "home.viewAll": "View All Products",
     "products.title": "Products",
     "products.search": "Search products...",
@@ -61,6 +67,12 @@ const translations = {
     "home.description":
       "مجموعه گسترده ما از بردها و قطعات الکترونیکی را برای پروژه بعدی خود کشف کنید.",
     "home.featured": "محصولات ویژه",
+    "home.popular": "محبوب‌ترین محصولات",
+    "home.discounted": "پیشنهادات ویژه",
+    "home.newArrivals": "محصولات جدید",
+    "home.ctaTitle": "آماده شروع پروژه خود هستید؟",
+    "home.ctaDescription":
+      "مجموعه گسترده ما از قطعات الکترونیکی را کاوش کنید و همه چیز مورد نیاز خود را پیدا کنید.",
     "home.viewAll": "مشاهده همه محصولات",
     "products.title": "محصولات",
     "products.search": "جستجوی محصولات...",
