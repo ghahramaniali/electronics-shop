@@ -53,11 +53,11 @@ export default function ProductCarousel({
             <ChevronRight className="h-6 w-6 text-primary" />
           </button>
         </div>
-      </div>
+      </div> 
 
       <div className="overflow-hidden rounded-xl">
         <div
-          className="flex transition-transform duration-500 ease-in-out gap-8"
+          className="flex py-4 transition-transform duration-500 ease-in-out gap-8"
           style={{ transform: `translateX(-${currentIndex * 25}%)` }}
         >
           {products.map((product) => (

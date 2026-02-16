@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import ProductCard from "@/components/ProductCard";
 import { useProductsStore } from "@/store/products-store";
 import { sampleProducts } from "@/data/products";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ProductsPage() {
+  const searchParams = useSearchParams();
   const {
     setProducts,
     filteredProducts,
@@ -17,7 +19,13 @@ export default function ProductsPage() {
     setSortOrder,
   } = useProductsStore();
   const [selectedCategory, setSelectedCategoryState] = useState("");
-  const [searchQuery, setSearchQueryState] = useState("");
+  const [searchQuery, setSearchQueryState] = useState(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("search") || "";
+    }
+    return "";
+  });
   const [sortBy, setSortByState] = useState("name");
   const [sortOrder, setSortOrderState] = useState("asc");
   const { t } = useLanguage();
@@ -25,6 +33,13 @@ export default function ProductsPage() {
   useEffect(() => {
     setProducts(sampleProducts);
   }, [setProducts]);
+
+  useEffect(() => {
+    const urlSearchQuery = searchParams.get("search");
+    if (urlSearchQuery && urlSearchQuery !== searchQuery) {
+      setSearchQuery(urlSearchQuery);
+    }
+  }, [searchParams, setSearchQuery, searchQuery]);
 
   useEffect(() => {
     setSelectedCategory(selectedCategory);

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import ProductCarousel from "@/components/ProductCarousel";
 import HeroSection from "@/components/HeroSection";
@@ -34,7 +35,7 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Popular Products Carousel */}
+      
       <div className="mb-16">
         <ProductCarousel
           products={popularProducts}
@@ -42,7 +43,7 @@ export default function Home() {
         />
       </div>
 
-      {/* Features Section */}
+     
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         <div className="text-center p-6 rounded-xl bg-gradient-to-br from-surface to-surface/80 border border-light hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 hover:border-accent/30 group">
           <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent/80 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg group-hover:shadow-accent/25 transition-all duration-300">
@@ -111,7 +112,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Discounted Products Carousel */}
+     
       <div className="mb-16">
         <ProductCarousel
           products={discountedProducts}
@@ -119,7 +120,7 @@ export default function Home() {
         />
       </div>
 
-      {/* New Arrivals Carousel */}
+   
       <div className="mb-16">
         <ProductCarousel
           products={newArrivals}
@@ -127,7 +128,7 @@ export default function Home() {
         />
       </div>
 
-      {/* Featured Products Grid */}
+    
       <div className="mb-16">
         <h2 className="text-3xl font-bold text-primary mb-8 text-center">
           {t("home.featured") || "Featured Products"}
@@ -148,12 +149,12 @@ export default function Home() {
           {t("home.ctaDescription") ||
             "Explore our wide range of electronic components and find everything you need."}
         </p>
-        <a
+        <Link
           href="/products"
           className="inline-block bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:from-blue-700 hover:to-blue-800 hover:shadow-xl hover:scale-105 border border-blue-500/30 shadow-lg"
         >
           {t("home.viewAll") || "View All Products"}
-        </a>
+        </Link>
       </div>
     </div>
   );

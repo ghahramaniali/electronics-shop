@@ -18,8 +18,7 @@ const heroSlides: HeroSlide[] = [
     title: "Electronics Innovation",
     subtitle:
       "Discover cutting-edge boards and components for your next project",
-    image:
-      "https://via.placeholder.com/1200x400/2b6777/ffffff?text=Electronics+Shop",
+    image: "/product (1).avif",
     cta: "Shop Now",
     link: "/products",
   },
@@ -27,8 +26,7 @@ const heroSlides: HeroSlide[] = [
     id: 2,
     title: "Arduino & Raspberry Pi",
     subtitle: "Everything you need for IoT and embedded systems",
-    image:
-      "https://via.placeholder.com/1200x400/52ab98/ffffff?text=Arduino+%26+Raspberry+Pi",
+    image: "/product (2).avif",
     cta: "Explore",
     link: "/products?category=Arduino",
   },
@@ -36,8 +34,7 @@ const heroSlides: HeroSlide[] = [
     id: 3,
     title: "Special Offers",
     subtitle: "Get up to 30% off on selected items",
-    image:
-      "https://via.placeholder.com/1200x400/0891b2/ffffff?text=Special+Offers",
+    image: "/product (1).jfif",
     cta: "View Deals",
     link: "/products?discount=true",
   },
