@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ProductCard from "./ProductCard";
+import AnimatedSection from "./AnimatedSection";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Product } from "@/store/cart-store";
 
@@ -32,7 +33,7 @@ export default function ProductCarousel({
   }
 
   return (
-    <div className="mb-12">
+    <AnimatedSection animation="fade-up" className="mb-12">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-3xl font-bold text-primary">{title}</h2>
         <div className="flex gap-3">
@@ -53,20 +54,26 @@ export default function ProductCarousel({
             <ChevronRight className="h-6 w-6 text-primary" />
           </button>
         </div>
-      </div> 
+      </div>
 
       <div className="overflow-hidden rounded-xl">
         <div
           className="flex py-4 transition-transform duration-500 ease-in-out gap-8"
           style={{ transform: `translateX(-${currentIndex * 25}%)` }}
         >
-          {products.map((product) => (
-            <div key={product.id} className="w-1/4 flex-shrink-0">
+          {products.map((product, index) => (
+            <div
+              key={product.id}
+              className="w-1/4 flex-shrink-0"
+              style={{
+                animationDelay: `${index * 100}ms`,
+              }}
+            >
               <ProductCard product={product} />
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </AnimatedSection>
   );
 }
